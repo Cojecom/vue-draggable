@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IntelliJ project files
+.idea
+*.iml
+
+# Development files
+.babelrc
+webpack.config.js
+
+# Dependency directories
+node_modules/
+
+# Examples
+examples/
