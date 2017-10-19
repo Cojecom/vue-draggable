@@ -1,6 +1,7 @@
 <template>
   <div
     @mousedown.prevent="handleMouseDown"
+    @mouse
     :style="[{ transform: `translate(${this.x}px, ${this.y}px)` }, styles]"
   >
     <slot />
@@ -15,7 +16,7 @@
         y: 0,
       };
     },
-    props: ['onMouseDown', 'onMouseMove', 'onMouseUp', 'styles'],
+    props: ['styles'],
     beforeDestroy() {
       window.removeEventListener('mousemove', this.handleMouseMove);
       window.removeEventListener('mouseup', this.handleMouseUp);
@@ -36,7 +37,7 @@
           y: e.clientY,
         };
         this.shouldRequestAnimationFrame = true;
-        if (this.onMouseDown) this.onMouseDown(this.$el);
+        this.$emit('mouseDown');
       },
       handleMouseMove(e) {
         e.preventDefault();
@@ -50,14 +51,15 @@
             this.shouldRequestAnimationFrame = false; // needed to avoid continually requesting animation frame
             requestAnimationFrame(this.update);
           }
-          if (this.onMouseMove) this.onMouseMove(this.$el);
+          this.$emit('mouseMove');
         }
       },
       handleMouseUp(e) {
         e.preventDefault();
 
+        if (this.isMouseDown) this.$emit('mouseUp');
+
         this.isMouseDown = false;
-        if (this.onMouseUp) this.onMouseUp(this.$el);
       },
       update() {
         this.shouldRequestAnimationFrame = true; // after this update, ready to request a new animation frame
