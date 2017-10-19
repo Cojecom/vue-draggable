@@ -1,6 +1,6 @@
 {
   "name": "@atomic-nyc/vue-draggable",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An easy-to-use draggable component for Vue.js.",
   "main": "dist/vue-draggable.js",
   "repository": {

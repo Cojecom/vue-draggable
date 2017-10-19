@@ -1,6 +1,7 @@
 # vue-draggable
+[![npm version](https://badge.fury.io/js/%40atomic-nyc%2Fvue-draggable.svg)](https://badge.fury.io/js/%40atomic-nyc%2Fvue-draggable)
 
-An easy-to-use draggable for [Vue.js](https://vuejs.org/) powered by [Atomic NYC](http://atomicsoftware.com).
+An easy-to-use draggable component for [Vue.js](https://vuejs.org/) powered by [Atomic NYC](http://atomicsoftware.com).
 
 ## Installation
 ```
@@ -36,6 +37,38 @@ Once installed, use it in a [Vue template](https://vuejs.org/v2/guide/syntax.htm
 Images even become draggable:
 ```html
 <vue-draggable>
+    <img src="./assets/draggable-logo.png">
+</vue-draggable>
+```
+
+### Props
+#### styles
+Type: `Object`  
+Required: `false`
+
+Custom styling applied to the outer div of the `vue-draggable`
+
+##### Example
+```html
+<vue-draggable :styles="{ backgroundColor: 'red'}">
+    <img src="./assets/draggable-logo.png">
+</vue-draggable>
+```
+
+### Events
+#### mouseDown
+Custom function emitted when user clicks mouse button on the draggable component.
+
+#### mouseMove
+Custom function emitted when user moves the draggable component.
+
+#### mouseUp
+Custom function emitted when user releases mouse button from the draggable component.
+
+##### Example
+Assume the `handleMouseDown` function is defined in [`methods`](https://vuejs.org/v2/guide/events.html#Method-Event-Handlers).
+```html
+<vue-draggable @mouseDown="handleMouseDown">
     <img src="./assets/draggable-logo.png">
 </vue-draggable>
 ```
