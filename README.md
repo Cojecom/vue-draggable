@@ -1,6 +1,6 @@
 # vue-draggable
 
-An easy-to-use draggable for [Vue.js](https://vuejs.org/) and powered by [Atomic NYC](http://atomicsoftware.com).
+An easy-to-use draggable for [Vue.js](https://vuejs.org/) powered by [Atomic NYC](http://atomicsoftware.com).
 
 ## Installation
 ```
@@ -14,7 +14,7 @@ Include the script file then install the component with `Vue.use(VueDraggable);`
 <script type="text/javascript" src="/node_modules/vue/dist/vue.min.js"></script>
 <script type="text/javascript" src="node_modules/@atomic-nyc/vue-draggable/dist/vue-draggable.min.js"></script>
 <script type="text/javascript">
-Vue.use(VueDraggable);
+    Vue.use(VueDraggable);
 </script>
 ```
 
@@ -26,6 +26,16 @@ import VueDraggable from '@atomic-nyc/vue-draggable';
 ## Usage
 Once installed, use it in a [Vue template](https://vuejs.org/v2/guide/syntax.html) as follows:
 
+
+```html
+<vue-draggable>
+    <div>This div is draggable.</div>
+</vue-draggable>
 ```
-<vue-draggable></vue-draggable>
+
+Images even become draggable:
+```html
+<vue-draggable>
+    <img src="./assets/draggable-logo.png">
+</vue-draggable>
 ```
