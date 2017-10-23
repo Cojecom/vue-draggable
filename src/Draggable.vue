@@ -1,7 +1,6 @@
 <template>
   <div
     @mousedown.prevent="handleMouseDown"
-    @mouse
     :style="[{ transform: `translate(${this.x}px, ${this.y}px)` }, styles]"
   >
     <slot />
