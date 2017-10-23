@@ -36,7 +36,7 @@
           y: e.clientY,
         };
         this.shouldRequestAnimationFrame = true;
-        this.$emit('mouseDown');
+        this.$emit('mouseDown', e);
       },
       handleMouseMove(e) {
         e.preventDefault();
@@ -50,13 +50,13 @@
             this.shouldRequestAnimationFrame = false; // needed to avoid continually requesting animation frame
             requestAnimationFrame(this.update);
           }
-          this.$emit('mouseMove');
+          this.$emit('mouseMove', e);
         }
       },
       handleMouseUp(e) {
         e.preventDefault();
 
-        if (this.isMouseDown) this.$emit('mouseUp');
+        if (this.isMouseDown) this.$emit('mouseUp', e);
 
         this.isMouseDown = false;
       },
