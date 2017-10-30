@@ -20,6 +20,7 @@ const config = {
       },
     ]
   },
+  target: 'node',
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
