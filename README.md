@@ -72,3 +72,5 @@ Assume the `handleMouseDown` function is defined in [`methods`](https://vuejs.or
     <img src="./assets/draggable-logo.png">
 </vue-draggable>
 ```
+
+This package is compatible with [Vue.js Server-Side Rendering](https://ssr.vuejs.org/en/).
